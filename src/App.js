@@ -4,6 +4,7 @@ import {
 
 import { useForm } from './useForm';
 import './App.css'
+import { Todo } from './Todo';
 
 export const App = () => {
 
@@ -16,8 +17,10 @@ export const App = () => {
 
 
   const addToDo = () => {
-    restartForm();
-    setTodos([...todos, todo]);
+    if(todo.replace(' ', '').length > 0){
+      restartForm();
+      setTodos([...todos, todo]);
+    }
   } // se agrega la nueva tarea y se limpia el formulario
 
   return (
@@ -38,6 +41,7 @@ export const App = () => {
           className='todoBar' 
           value={todo} 
           onChange={(handleInputChange)}
+          autoComplete='off'
         />
         <div 
           className='addButton'
@@ -51,9 +55,7 @@ export const App = () => {
           {
             todos.map((tarea, i) => {
               return (
-                <div key={i}>
-                  <p>{tarea}</p>
-                </div>
+                <Todo key={i} tarea={tarea} />
               )
             })
           }
