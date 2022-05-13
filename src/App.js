@@ -25,13 +25,19 @@ export const App = () => {
       <h1 className='title'>
         To Do List
       </h1>
-      <div className='todoDiv'>
+      <form 
+        className='todoDiv'
+        onSubmit={(e) => {
+          e.preventDefault();
+          addToDo();
+        }}
+      >
         <input 
           type='text' 
           name='todo' 
           className='todoBar' 
           value={todo} 
-          onChange={handleInputChange}
+          onChange={(handleInputChange)}
         />
         <div 
           className='addButton'
@@ -40,7 +46,7 @@ export const App = () => {
           <div className='lineUp'></div>
           <div className='lineDown'></div>
         </div>
-      </div>
+      </form>
       <div className='todos' >
           {
             todos.map((tarea, i) => {
