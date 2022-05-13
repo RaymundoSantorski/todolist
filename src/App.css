@@ -9,14 +9,44 @@
     text-align: center;
 }
 
-.searchDiv{
+.todoDiv{
     display: flex;
     justify-content: center;
 }
 
-.searchBar{
+.todoBar{
     border-radius: 8px;
     border: 2px solid rgba(0, 0, 0, 0.8);
     width: 60%;
     height: 40px;
+}
+
+.addButton{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 3px solid black;
+    height: 40px;
+    width: 40px;
+}
+
+.addButton:hover{
+    border: 3px solid rgba(0, 0, 0, 0.4);
+}
+
+.lineUp{
+    position: absolute;
+    height: 25px;
+    border: 2px solid black;
+    width: 0px;
+}
+
+.lineDown{
+    position: absolute;
+    top: 18px;
+    height: 0px;
+    border: 2px solid black;
+    width: 25px;
 }
