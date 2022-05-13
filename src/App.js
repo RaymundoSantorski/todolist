@@ -9,16 +9,16 @@ export const App = () => {
 
   const {values, handleInputChange, restartForm} = useForm({
     todo: ''
-  });
+  }); // se inicializa el input para añadir tarea
+  const { todo } = values; // se obtiene el valor del input 'todo'
 
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([]); // estado para mantener las tareas
 
-  const { todo } = values;
 
   const addToDo = () => {
     restartForm();
     setTodos([...todos, todo]);
-  }
+  } // se agrega la nueva tarea y se limpia el formulario
 
   return (
     <div className='mainDiv'>
