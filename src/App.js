@@ -19,9 +19,20 @@ export const App = () => {
   const addToDo = () => {
     if(todo.replace(' ', '').length > 0){
       restartForm();
-      setTodos([...todos, todo]);
+      setTodos([...todos, {
+        todo, 
+        complete: false
+      }]);
     }
   } // se agrega la nueva tarea y se limpia el formulario
+
+  const completeTodo = (i, value) => {
+    let currentTodo = todos[i];
+    currentTodo.complete = value;
+    let allTodos = todos;
+    allTodos[i] = currentTodo;
+    setTodos([...allTodos]);
+  }
 
   return (
     <div className='mainDiv'>
@@ -55,7 +66,7 @@ export const App = () => {
           {
             todos.map((tarea, i) => {
               return (
-                <Todo key={i} tarea={tarea} />
+                <Todo key={i} tarea={tarea} ind={i} completeTodo={completeTodo} />
               )
             })
           }

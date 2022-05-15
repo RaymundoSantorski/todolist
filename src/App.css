@@ -20,6 +20,7 @@
     width: 60%;
     height: 40px;
     padding-left: 10px;
+    margin-right: 10px;
 }
 
 .addButton{
@@ -28,13 +29,13 @@
     justify-content: center;
     align-items: center;
     border-radius: 100%;
-    border: 3px solid black;
+    border: 2px solid black;
     height: 40px;
     width: 40px;
 }
 
 .addButton:hover{
-    border: 3px solid rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(0, 0, 0, 0.4);
 }
 
 .lineUp{
@@ -53,6 +54,20 @@
 }
 
 .todo{
-    border: 2px solid rgba(0, 0, 0, 0.6);
+    border: 3px solid rgba(0, 0, 0, 0.4);
     border-radius: 10px;
+    margin: 10px;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.todo.completed{
+    border: 3px solid rgb(16, 152, 6);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 0px 10px;
 }
