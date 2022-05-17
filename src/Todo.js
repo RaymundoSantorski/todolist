@@ -13,7 +13,7 @@ export const Todo = ({ tarea, ind, completeTodo }) => {
             <div className='todoActions'>
                 <p>Borrar</p>
             </div>
-            <div>
+            <div className='checkDiv'>
                 <input 
                     type='checkbox'
                     className='checkbox'  
