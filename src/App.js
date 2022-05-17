@@ -39,6 +39,16 @@ export const App = () => {
     setTodos([...filteredTodos]);
   }
 
+  const editTodo = (i, value) => {
+    if(value.replace(/ /g, "").length > 0){
+      let currentTodo = todos[i]; 
+      currentTodo.todo = value;
+      let allTodos = todos;
+      allTodos[i] = currentTodo;
+      setTodos([...allTodos]); 
+    }
+  }
+
   return (
     <div className='mainDiv'>
       <h1 className='title'>
@@ -77,6 +87,7 @@ export const App = () => {
                   ind={i} 
                   completeTodo={completeTodo} 
                   deleteTodo={deleteTodo}
+                  editTodo={editTodo}
                 />
               )
             })
