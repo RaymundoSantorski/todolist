@@ -1,6 +1,6 @@
 
 
-export const Todo = ({ tarea, ind, completeTodo }) => {
+export const Todo = ({ tarea, ind, completeTodo, deleteTodo }) => {
 
     const { todo, complete } = tarea;
     const classComplete = complete ? 'todo completed' : 'todo';
@@ -11,7 +11,12 @@ export const Todo = ({ tarea, ind, completeTodo }) => {
                 <p>{todo}</p>
             </div>
             <div className='todoActions'>
-                <p>Borrar</p>
+                <div 
+                    className='deleteButton'
+                    onClick={() => { deleteTodo(ind) }}
+                >
+                    <div className='deleteIcon'></div>
+                </div>
             </div>
             <div className='checkDiv'>
                 <input 

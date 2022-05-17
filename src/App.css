@@ -62,7 +62,6 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-
 .todo.completed{
     border: 3px solid rgb(16, 152, 6);
     border-radius: 10px;
@@ -79,4 +78,20 @@
 .todoActions{
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.deleteButton{
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(200, 50, 0, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteIcon{
+    width: 15px;
+    border: 2px solid rgba(200, 50, 0, 0.8);
 }

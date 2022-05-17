@@ -27,11 +27,16 @@ export const App = () => {
   } // se agrega la nueva tarea y se limpia el formulario
 
   const completeTodo = (i, value) => {
-    let currentTodo = todos[i];
-    currentTodo.complete = value;
-    let allTodos = todos;
-    allTodos[i] = currentTodo;
-    setTodos([...allTodos]);
+    let currentTodo = todos[i]; // establece la tarea a actualizar utilizando el indice
+    currentTodo.complete = value; // cambia el valor complete dela tarea 
+    let allTodos = todos; // se crea un nuevo objeto igual al state que podremos modificar
+    allTodos[i] = currentTodo; // se cambia la tarea en el objeto duplicado
+    setTodos([...allTodos]); // se establece el state de las tareas 
+  }
+
+  const deleteTodo = (i) => {
+    let filteredTodos = todos.filter((tarea, ind) => ind!==i);
+    setTodos([...filteredTodos]);
   }
 
   return (
@@ -66,7 +71,13 @@ export const App = () => {
           {
             todos.map((tarea, i) => {
               return (
-                <Todo key={i} tarea={tarea} ind={i} completeTodo={completeTodo} />
+                <Todo 
+                  key={i} 
+                  tarea={tarea} 
+                  ind={i} 
+                  completeTodo={completeTodo} 
+                  deleteTodo={deleteTodo}
+                />
               )
             })
           }
