@@ -7,15 +7,22 @@ export const Todo = ({ tarea, ind, completeTodo }) => {
 
     return (
         <div className={classComplete}>
-            <p>{todo}</p>
-            <input 
-                type='checkbox'
-                className='checkbox'  
-                checked={complete}
-                onChange={(e) => {
-                    completeTodo(ind, e.target.checked);
-                }}
-            />
+            <div>
+                <p>{todo}</p>
+            </div>
+            <div className='todoActions'>
+                <p>Borrar</p>
+            </div>
+            <div>
+                <input 
+                    type='checkbox'
+                    className='checkbox'  
+                    checked={complete}
+                    onChange={(e) => {
+                        completeTodo(ind, e.target.checked);
+                    }}
+                />
+            </div>
         </div>
     )
 }
