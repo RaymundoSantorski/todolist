@@ -88,7 +88,8 @@ export const App = () => {
       <Filter  filter={filter} setFilter={setFilter} />
       <div className='todos' >
           {
-            todos.map((tarea, i) => {
+            filter==='all' 
+            ? todos.map((tarea, i) => {
               return (
                 <Todo 
                   key={i} 
@@ -99,6 +100,39 @@ export const App = () => {
                   editTodo={editTodo}
                 />
               )
+            })
+            : filter==='complete'
+            ? todos.map((tarea, i) => {
+              if(tarea.complete){
+                return (
+                  <Todo 
+                    key={i} 
+                    tarea={tarea} 
+                    ind={i} 
+                    completeTodo={completeTodo} 
+                    deleteTodo={deleteTodo}
+                    editTodo={editTodo}
+                  />
+                )
+              }else{
+                return null;
+              }
+            })
+            : todos.map((tarea, i) => {
+              if(!tarea.complete){
+                return (
+                  <Todo 
+                    key={i} 
+                    tarea={tarea} 
+                    ind={i} 
+                    completeTodo={completeTodo} 
+                    deleteTodo={deleteTodo}
+                    editTodo={editTodo}
+                  />
+                )
+              }else{
+                return null;
+              }
             })
           }
       </div>
