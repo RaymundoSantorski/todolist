@@ -17,7 +17,7 @@ export const App = () => {
 
 
   const addToDo = () => {
-    if(todo.replace(' ', '').length > 0){
+    if(todo.replace(/ /g, '').length > 0){
       restartForm();
       setTodos([...todos, {
         todo, 
