@@ -138,3 +138,35 @@
     font-size: 18px;
     margin: 10px 0px 10px 10px;
 }
+
+.filter{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 10px;
+}
+
+.filterItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+} 
+
+.filterItem:hover{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.filterItem.active{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.filterItem:first-child{
+    border-right: 2px solid rgba(0, 0, 0, 0.6);
+}
+
+.filterItem:last-child{
+    border-left: 2px solid rgba(0, 0, 0, 0.6);
+}

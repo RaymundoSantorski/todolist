@@ -5,16 +5,24 @@ import {
 import { useForm } from './useForm';
 import './App.css'
 import { Todo } from './Todo';
+import { Filter } from './Filter';
 
 export const App = () => {
+
+  /** Filter handler */
+  const [filter, setFilter] = useState('all');
+
+  /* Form handler */
 
   const {values, handleInputChange, restartForm} = useForm({
     todo: ''
   }); // se inicializa el input para añadir tarea
+
   const { todo } = values; // se obtiene el valor del input 'todo'
 
-  const [todos, setTodos] = useState([]); // estado para mantener las tareas
+  /** Todo handler */
 
+  const [todos, setTodos] = useState([]); // estado para mantener las tareas
 
   const addToDo = () => {
     if(todo.replace(/ /g, '').length > 0){
@@ -77,6 +85,7 @@ export const App = () => {
           <div className='lineDown'></div>
         </div>
       </form>
+      <Filter  filter={filter} setFilter={setFilter} />
       <div className='todos' >
           {
             todos.map((tarea, i) => {
