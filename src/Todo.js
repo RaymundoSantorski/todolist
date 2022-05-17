@@ -44,7 +44,17 @@ export const Todo = ({
                             />
                         </form>
                     </div>
-                    : <p className='todoText'>{todo}</p>
+                    : <div className='checkDiv'>
+                        <input 
+                            type='checkbox'
+                            className='checkbox'  
+                            checked={complete}
+                            onChange={(e) => {
+                                completeTodo(ind, e.target.checked);
+                            }}
+                        />
+                        <p className='todoText'>{todo}</p>
+                    </div> 
                 }
             </div>
             <div className='todoActions'>
@@ -62,16 +72,6 @@ export const Todo = ({
                 >
                     <div className='deleteIcon'></div>
                 </div>
-            </div>
-            <div className='checkDiv'>
-                <input 
-                    type='checkbox'
-                    className='checkbox'  
-                    checked={complete}
-                    onChange={(e) => {
-                        completeTodo(ind, e.target.checked);
-                    }}
-                />
             </div>
         </div>
     )
