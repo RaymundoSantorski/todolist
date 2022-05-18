@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { 
+    useState,
+} from 'react';
 
 import { useForm } from "./useForm";
 
@@ -41,6 +43,10 @@ export const Todo = ({
                                 name='todoEdit'
                                 className='todoEditInput'
                                 autoFocus
+                                onBlur={() => { 
+                                    editTodo(ind, todoEdit);
+                                    setEdit(false);
+                                }}
                             />
                         </form>
                     </div>
