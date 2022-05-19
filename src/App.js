@@ -60,7 +60,7 @@ export const App = () => {
   return (
     <div className='mainDiv'>
       <h1 className='title'>
-        To Do List
+        Tareas App
       </h1>
       <form 
         className='todoDiv'
