@@ -53,6 +53,12 @@
     width: 25px;
 }
 
+.todos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .todo{
     border: 3px solid rgba(0, 0, 0, 0.4);
     border-radius: 10px;
@@ -60,6 +66,7 @@
     padding: 0px 10px;
     display: grid;
     grid-template-columns: 4fr 1fr;
+    max-width: 800px;
 }
 
 .todo.completed{
