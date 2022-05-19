@@ -19,7 +19,7 @@ Para crear el build de producción del proyecto, el cual puede subirse a un serv
 
 ## Funciones actuales en el proyecto
 
->Agregar tareas (Todavia no son persistentes)
+>Agregar tareas 
 
 >Editar tareas
 
@@ -28,3 +28,5 @@ Para crear el build de producción del proyecto, el cual puede subirse a un serv
 >Marcar/desmarcar tareas como completadas
 
 >Filtrar entre tareas completadas, incompletas o mostrar todas las tareas
+
+>Se guardan las tareas de forma persistente
