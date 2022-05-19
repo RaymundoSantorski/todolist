@@ -1,5 +1,6 @@
 import {
   useState,
+  useEffect
 } from 'react';
 
 import { useForm } from './useForm';
@@ -27,7 +28,7 @@ export const App = () => {
   const addToDo = () => {
     if(todo.replace(/ /g, '').length > 0){
       restartForm();
-      setTodos([...todos, {
+      saveTodos([...todos, {
         todo, 
         complete: false
       }]);
@@ -39,12 +40,12 @@ export const App = () => {
     currentTodo.complete = value; // cambia el valor complete dela tarea 
     let allTodos = todos; // se crea un nuevo objeto igual al state que podremos modificar
     allTodos[i] = currentTodo; // se cambia la tarea en el objeto duplicado
-    setTodos([...allTodos]); // se establece el state de las tareas 
+    saveTodos([...allTodos]);
   }
 
   const deleteTodo = (i) => {
     let filteredTodos = todos.filter((tarea, ind) => ind!==i);
-    setTodos([...filteredTodos]);
+    saveTodos([...filteredTodos]);
   }
 
   const editTodo = (i, value) => {
@@ -53,9 +54,19 @@ export const App = () => {
       currentTodo.todo = value;
       let allTodos = todos;
       allTodos[i] = currentTodo;
-      setTodos([...allTodos]); 
+      saveTodos([...allTodos]);
     }
   }
+
+  const saveTodos = (value) => {
+    localStorage.setItem('todos', JSON.stringify(value));
+    setTodos([...value]);
+  }
+
+  useEffect(() => {
+    const savedTodos = localStorage.getItem('todos');
+    setTodos([...JSON.parse(savedTodos)]);
+  }, []);
 
   return (
     <div className='mainDiv'>
