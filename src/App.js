@@ -65,7 +65,7 @@ export const App = () => {
 
   useEffect(() => {
     const savedTodos = localStorage.getItem('todos');
-    setTodos([...JSON.parse(savedTodos)]);
+    savedTodos && setTodos([...JSON.parse(savedTodos)]);
   }, []);
 
   return (

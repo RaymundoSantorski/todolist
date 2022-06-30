@@ -16,7 +16,7 @@ export const Todo = ({
     const { todo, complete } = tarea;
     const classComplete = complete ? 'todo completed' : 'todo';
 
-    const { values, handleInputChange, restartForm } = useForm({
+    const { values, handleInputChange} = useForm({
         todoEdit: todo
     });
     const { todoEdit } = values;
