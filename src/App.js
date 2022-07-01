@@ -2,6 +2,7 @@ import {
   useState,
   useEffect
 } from 'react';
+import { v4 as uuid } from 'uuid';
 
 import { useForm } from './useForm';
 import './App.css'
@@ -30,7 +31,8 @@ export const App = () => {
       restartForm();
       saveTodos([...todos, {
         todo, 
-        complete: false
+        complete: false,
+        id: uuid()
       }]);
     }
   } // se agrega la nueva tarea y se limpia el formulario
@@ -103,7 +105,7 @@ export const App = () => {
             ? todos.map((tarea, i) => {
               return (
                 <Todo 
-                  key={i} 
+                  key={tarea.id} 
                   tarea={tarea} 
                   ind={i} 
                   completeTodo={completeTodo} 
@@ -117,7 +119,7 @@ export const App = () => {
               if(tarea.complete){
                 return (
                   <Todo 
-                    key={i} 
+                    key={tarea.id} 
                     tarea={tarea} 
                     ind={i} 
                     completeTodo={completeTodo} 
@@ -133,7 +135,7 @@ export const App = () => {
               if(!tarea.complete){
                 return (
                   <Todo 
-                    key={i} 
+                    key={tarea.id} 
                     tarea={tarea} 
                     ind={i} 
                     completeTodo={completeTodo} 
